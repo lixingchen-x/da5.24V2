@@ -53,7 +53,7 @@ public class ListenServer  extends Thread{
                         new Thread(new OpenServer(FCclient.p2pListening)).start();
 
                         FCclient.playerNumber=Integer.valueOf(FCclient.logState.get("playerNum").toString());
-                        if(FCclient.playerNumber==4){
+                        if(FCclient.playerNumber==3){
 
                             // fix map not consistancy
 

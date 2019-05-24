@@ -477,7 +477,7 @@ public class GameUI extends JFrame {
 	public void initial_gameState() {
 	    Map<String,String> iniGB = new HashMap<>();
 	    //iniGB = initialGameBoard();
-		gameState.put("leaderID", "4");
+		gameState.put("leaderID", "3");
 		gameState.put("HeartBeat","no");
 		//gameState.put("localID",null);
 		gameState.put("Turn", "1");
@@ -489,45 +489,30 @@ public class GameUI extends JFrame {
 		gameState.put("diceInfo","^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^ ^_^");
 	}
 
-    public static int nextTurn(int myTurn){
-	    int nextTurn=-1;
-	    if(myTurn==1){
-	        if(FCclient.idMap.containsKey(2)){
-                nextTurn=2;
-            }else if(!FCclient.idMap.containsKey(2)&&FCclient.idMap.containsKey(3)){
-                nextTurn=3;
-            }else if(!FCclient.idMap.containsKey(2)&&!FCclient.idMap.containsKey(3)&&FCclient.idMap.containsKey(4)){
-                nextTurn=4;
-            }
-        }
-        else if(myTurn==2){
-            if(FCclient.idMap.containsKey(3)){
-                nextTurn=3;
-            }else if(!FCclient.idMap.containsKey(3)&&FCclient.idMap.containsKey(4)){
-                nextTurn=4;
-            }else if(!FCclient.idMap.containsKey(3)&&!FCclient.idMap.containsKey(4)&&FCclient.idMap.containsKey(1)){
-                nextTurn=1;
-            }
-        }
-        else if(myTurn==3){
-            if(FCclient.idMap.containsKey(4)){
-                nextTurn=4;
-            }else if(!FCclient.idMap.containsKey(4)&&FCclient.idMap.containsKey(1)){
-                nextTurn=1;
-            }else if(!FCclient.idMap.containsKey(4)&&!FCclient.idMap.containsKey(1)&&FCclient.idMap.containsKey(2)){
-                nextTurn=2;
-            }
-        }
-        else if(myTurn==4){
-            if(FCclient.idMap.containsKey(1)){
-                nextTurn=1;
-            }else if(!FCclient.idMap.containsKey(1)&&FCclient.idMap.containsKey(2)){
-                nextTurn=2;
-            }else if(!FCclient.idMap.containsKey(1)&&!FCclient.idMap.containsKey(2)&&FCclient.idMap.containsKey(3)){
-                nextTurn=3;
-            }
-        }
-        return nextTurn;
-    }
+	 public static int nextTurn(int myTurn){
+		    int nextTurn=-1;
+		    if(myTurn==1){
+		        if(FCclient.idMap.containsKey(2)){
+	                nextTurn=2;
+	            }else if(!FCclient.idMap.containsKey(2)&&FCclient.idMap.containsKey(3)){
+	                nextTurn=3;
+	            }
+	        }
+	        else if(myTurn==2){
+	            if(FCclient.idMap.containsKey(3)){
+	                nextTurn=3;
+	            }else if(!FCclient.idMap.containsKey(3)&&FCclient.idMap.containsKey(1)){
+	                nextTurn=1;
+	            }
+	        }
+	        else if(myTurn==3){
+	            if(FCclient.idMap.containsKey(1)){
+	                nextTurn=1;
+	            }else if(!FCclient.idMap.containsKey(1)&&FCclient.idMap.containsKey(2)){
+	                nextTurn=2;
+	            }
+	        }
+	        return nextTurn;
+	    }
 
 }

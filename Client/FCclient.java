@@ -45,7 +45,7 @@ public class FCclient {
     public static ServerSocket p2pListening = null; // listening other players
     public static int p2pPort=6666;
 
-    public static int leaderID=4;
+    public static int leaderID=3;
     public static int localID=-1;
     public static int playerNumber=0;
 
@@ -207,7 +207,7 @@ public class FCclient {
                         System.out.println(idMap);
                         FCclient.gaming.textArea.setText(playerlist);
                         FCclient.playerNumber=Integer.valueOf(FCclient.logState.get("playerNum").toString());
-                        if(FCclient.playerNumber==4){
+                        if(FCclient.playerNumber==3){
                             idMap=StringToMap(FCclient.logState.get("id_ip").toString());   // fix map not consistancy
                             System.out.println(idMap);
                             if(FCclient.gaming==null){

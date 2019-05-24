@@ -84,7 +84,7 @@ public class Client_connection extends Thread{
 							logState.put("checkAlive","no");
 
 
-							if(FcServer.username.size()==4){
+							if(FcServer.username.size()==3){
 								for(Client_connection client : clients) {
 									logState.put("checkAlive","no");
 									client.write(logState);
@@ -107,7 +107,7 @@ public class Client_connection extends Thread{
                             continue;
                         }
                     }else if(loginStatus.equals("yes")){
-						if(FcServer.username.size()==4){
+						if(FcServer.username.size()==3){
 							logState.put("checkAlive","no");
 							write(logState);
 						}
